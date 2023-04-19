@@ -1,7 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-public class BarreDeVie : MonoBehaviour
+public class BarreDeVie1 : MonoBehaviour
 {
 
     public Slider slider;
