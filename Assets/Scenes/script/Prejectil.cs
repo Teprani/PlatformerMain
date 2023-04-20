@@ -36,11 +36,13 @@ public class Prejectil : MonoBehaviour
         if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x && sr.flipX == false)
         {
             transform.rotation = Quaternion.Euler(180f,0f,-rotZ + offset);
-            
+            transform.localScale = new Vector2(1, -1);
+
         }
         else if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x <= transform.position.x && sr.flipX == true) 
         {
             transform.rotation = Quaternion.Euler(0f,0f,rotZ + offset);
+            transform.localScale = new Vector2(1, -1);
         }
 
         //if (sr.flipX == true)
