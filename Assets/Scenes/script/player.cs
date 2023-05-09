@@ -12,7 +12,7 @@ public class player : MonoBehaviour
     float horizontal_value;
     Vector2 ref_velocity = Vector2.zero;
 
-    float jumpForce = 12f;
+    float jumpForce = 15f;
 
     [SerializeField] TrailRenderer tr;
     [SerializeField] float moveSpeed_horizontal = 400.0f;
