@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     private Vector2 aidepose;
 
     private Vector3 respawnPoint;
-    public GameObject fallDetector; // détecte la chute du player et se déplace en même temps
+    public GameObject fallDetector; // detecte la chute du player et se deplace en meme temps
 
     [SerializeField] TrailRenderer tr;
     [SerializeField] float moveSpeed_horizontal = 400.0f;
@@ -93,7 +93,10 @@ public class player : MonoBehaviour
    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //animController.SetBool("Jumping", false);
+         if(collision.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -108,5 +111,6 @@ public class player : MonoBehaviour
         grounded = false ;
         
     }
+
 
 }
