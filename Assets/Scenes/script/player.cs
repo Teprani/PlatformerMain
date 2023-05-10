@@ -96,8 +96,13 @@ public class player : MonoBehaviour
          if(collision.tag == "FallDetector")
         {
             transform.position = respawnPoint;
+
         }
-    }
+        else if (collision.tag == "checkpoint")
+        {
+                respawnPoint = transform.position;
+        }
+        }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
