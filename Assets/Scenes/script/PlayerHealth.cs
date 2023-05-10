@@ -11,7 +11,7 @@ public class PlayerHealth1 : MonoBehaviour
 
     public BarreDeVie healthBar;
 
-    [SerializeField] GameObject hitboxDMG;
+    //[SerializeField] GameObject hitboxDMG;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +40,6 @@ public class PlayerHealth1 : MonoBehaviour
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
-
-
         }
     }
 
@@ -49,13 +47,13 @@ public class PlayerHealth1 : MonoBehaviour
     {
         while (isInvincible)
         {
-            hitboxDMG.SetActive(false);
+            //hitboxDMG.SetActive(false);
             graphics.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
             graphics.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
 
-            hitboxDMG.SetActive(true);
+            //hitboxDMG.SetActive(true);
         }
         Debug.Log("Coroutine1");
     }

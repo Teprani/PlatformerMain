@@ -9,6 +9,7 @@ public class EnemyHealth1 : MonoBehaviour
     public BarreDeVie healthBar;
     private SpriteRenderer graphics;
     [SerializeField] GameObject HEALTHBAR;
+    [SerializeField] public GameObject Ennemy;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class EnemyHealth1 : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            Object.Destroy(gameObject);
+            Object.Destroy(Ennemy);
         }
     }
     public void TakeDamage(int damage)

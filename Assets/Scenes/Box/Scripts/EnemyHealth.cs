@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth;
-    public int currentHealth;
+    private int currentHealth;
     public BarreDeVie healthBar;
     private SpriteRenderer graphics;
     [SerializeField] GameObject HEALTHBAR;
+    [SerializeField] public GameObject Ennemy;
 
     // Start is called before the first frame update
     void Start()
@@ -21,25 +22,25 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            Object.Destroy(gameObject);
+            Object.Destroy(Ennemy);
         }
-
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage; 
+        currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        StartCoroutine(ShowBar());
     }
 
     private void OnTriggerEnter2D(Collider2D Player)
     {
-        
-        if(Player.transform.name == "Player")
+
+        if (Player.transform.name == "Player")
         {
             TakeDamage(25);
+            StartCoroutine(ShowBar());
+
         }
     }
     private IEnumerator ShowBar()

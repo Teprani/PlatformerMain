@@ -12,7 +12,16 @@ public class player : MonoBehaviour
     float horizontal_value;
     Vector2 ref_velocity = Vector2.zero;
 
-    float jumpForce = 15f;
+    float jumpForce = 15f; 
+    
+    private int LastPressedJumpTime = 0;
+    private int LastOnGroundTime = 0;
+
+    bool CheckSphere;
+    private Vector2 aidepose;
+
+    private Vector3 respawnPoint;
+    public GameObject fallDetector; // détecte la chute du player et se déplace en même temps
 
     [SerializeField] TrailRenderer tr;
     [SerializeField] float moveSpeed_horizontal = 400.0f;
@@ -22,13 +31,7 @@ public class player : MonoBehaviour
     [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;
 
     [SerializeField] int CountJump = 2;
-    private int LastPressedJumpTime = 0;
-    private int LastOnGroundTime = 0;
-
-
-
-    bool CheckSphere;
-    private Vector2 aidepose;
+    
     [SerializeField] GameObject aide;
 
     // Start is called before the first frame update
@@ -37,9 +40,9 @@ public class player : MonoBehaviour
         cap = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        //animController = GetComponent<Animator>();
-        //Debug.Log(Mathf.Lerp(current, target, 0));
         rb.gravityScale = 4f;
+
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -58,6 +61,8 @@ public class player : MonoBehaviour
             Jump();
 
         }
+
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
  void Jump()
@@ -95,13 +100,13 @@ public class player : MonoBehaviour
     {
         CountJump = 2;
         grounded = true ;
-        //animController.SetBool("Jumping", false);
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         grounded = false ;
-        //animController.SetBool("Jumping", false);
+        
     }
 
 }

@@ -37,10 +37,10 @@ public class degatboite : MonoBehaviour
         {
             playerHealth = collision.transform.GetComponent<PlayerHealth>();
             playerCollide = true;
-            Vector3 test = collision.transform.position - gameObject.transform.position;
+            Vector2 test = collision.transform.position - gameObject.transform.position;
             test.Normalize();
-            dot = Vector3.Dot(test, Vector3.up);
-
+            dot = Vector2.Dot(test, Vector2.up);
+            Debug.Log("beh");
         }
     }
 
