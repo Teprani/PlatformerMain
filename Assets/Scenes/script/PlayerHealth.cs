@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth1 : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -41,6 +41,21 @@ public class PlayerHealth1 : MonoBehaviour
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
         }
+    }
+    public void Heal(int healAmount)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth = currentHealth + healAmount;
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth >= maxHealth)
+            {
+                currentHealth = maxHealth;
+                healthBar.SetHealth(currentHealth);
+            }
+        }
+
     }
 
     public IEnumerator InvincibilityFlash()

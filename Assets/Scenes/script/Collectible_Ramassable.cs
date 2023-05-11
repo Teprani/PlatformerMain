@@ -16,13 +16,15 @@ public class Collectible_Ramassable : MonoBehaviour
     void Update()
     {
         PickUpPotion();
+
     }
 
     void PickUpPotion()
     {
         if (playerRef && Input.GetKeyDown(KeyCode.A))
         {
-            playerRef.GetComponentInChildren<Health>().pv += 10;
+            playerRef.GetComponent<PlayerHealth>().Heal(10); 
+            //playerRef.GetComponentInChildren<Health>().pv += 10;
             Destroy(gameObject);
         }
     }

@@ -90,7 +90,7 @@ public class Prejectil : MonoBehaviour
     {
         if (NombreBloc < 2 && doneSpawning)
         {
-            Instantiate(bloc, SpawnPointBloc.position, SpawnPointBloc.rotation);
+            Instantiate(bloc, SpawnPointBloc.position, Quaternion.Euler(0, 0, 180));
             NombreBloc++;
             doneSpawning = false;
             Invoke ("nbrBloc",coolDown);

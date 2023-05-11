@@ -114,7 +114,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7750990127451993657
@@ -132,8 +132,9 @@ MonoBehaviour:
   SpawnPoint: {fileID: 7750990126079020479}
   SpawnPointBloc: {fileID: 7750990126079020479}
   balle: {fileID: 5216554852982423932, guid: d15008b3ce2fc674ca8daa6a1702e284, type: 3}
-  bloc: {fileID: 9064120480810985577, guid: 34845e7aa6ce0534ebdf5ea879878117, type: 3}
+  bloc: {fileID: 6632714138217350033, guid: d5187694cbf23ed41895fb9d001fd498, type: 3}
   offset: 0
+  sr: {fileID: 0}
   NombreBloc: 0
   TimeBetweenSpawns: 1
   timeSinceSpawn: 0

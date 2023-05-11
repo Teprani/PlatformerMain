@@ -26,11 +26,11 @@ public class IA_Enemy : MonoBehaviour {
         {
             if (direction.x < 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
             else if (direction.x > 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
 
             rb.velocity = new Vector2( direction.x * Speed, rb.velocity.y);
