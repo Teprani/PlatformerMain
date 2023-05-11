@@ -9,6 +9,8 @@ public class Balle : MonoBehaviour
     public Rigidbody2D rb;
     [SerializeField] private float lifeTime;
     [SerializeField] private GameObject balle;
+    [SerializeField] private GameObject Gun;
+    [SerializeField] private bool go;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +18,23 @@ public class Balle : MonoBehaviour
 
         rb.gravityScale = 0;
         Invoke("DestroyProjectile", lifeTime);
+        Gun = GameObject.Find("Arme");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        rb.velocity = transform.right * BulletSpeed; 
+
+        if (Gun.GetComponent<Prejectil>().Droite == false && go == false)
+        {
+            rb.velocity = -transform.right * BulletSpeed;
+            go = true;
+        }
+        else if (Gun.GetComponent<Prejectil>().Droite == true && go == false)
+        {
+            rb.velocity = transform.right * BulletSpeed;
+            go = true;
+        }
     }
     void DestroyProjectile()
     {
@@ -34,6 +46,7 @@ public class Balle : MonoBehaviour
         {
             //collision.gameObject.GetComponent<Ennemy>().pv -= Dommage;
             collision.gameObject.GetComponentInChildren<EnemyHealth>().TakeDamage(10);
+            collision.gameObject.GetComponentInChildren<EnemyHealth>().StartCoroutine("ShowBar");
             DestroyProjectile();
             Debug.Log("beh");
         }
