@@ -1,6 +1,6 @@
  using UnityEngine;
  using System.Collections;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 
 public class IA_Enemy : MonoBehaviour {
  

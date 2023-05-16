@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
             if(gameIsPause)
             {
                 Paused();
-                Player.SetActive(false);
+                //Player.SetActive(false);
             }
             else
             {
@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0;
         gameIsPause = true;
+        FindObjectOfType<player>().SetPause(true);
     }
 
     public void Resume()
@@ -38,10 +39,16 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
         gameIsPause = false;
+        FindObjectOfType<player>().SetPause(false);
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("main_menu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

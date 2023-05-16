@@ -30,6 +30,8 @@ public class player : MonoBehaviour
     [SerializeField] bool is_crouching = false;
     [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;
 
+    private bool isPaused = false;
+
     [SerializeField] int CountJump = 2;
     
     [SerializeField] GameObject aide;
@@ -56,10 +58,9 @@ public class player : MonoBehaviour
 
         //animController.SetFloat("Speed", Mathf.Abs(horizontal_value));
 
-        if (Input.GetKeyDown(KeyCode.Space) && CountJump > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && CountJump > 0 && isPaused == false)
         {
             Jump();
-
         }
 
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
@@ -115,6 +116,11 @@ public class player : MonoBehaviour
     {
         grounded = false ;
         
+    }
+
+    public void SetPause(bool pause)
+    {
+        isPaused = pause;
     }
 
 
