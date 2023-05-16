@@ -43,15 +43,13 @@ public class Prejectil : MonoBehaviour
 
             Droite = true;
             Bon_Sens = true;
-            Debug.Log("Droite");
 
         }
         else if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x && sr.flipX == true)
         {
             transform.localScale = new Vector2(-1, -1);
 
-            Bon_Sens = false;
-            Debug.Log("Mauvais_cote");
+            Bon_Sens = false;   
 
         }
 
@@ -62,15 +60,12 @@ public class Prejectil : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, -180f, -rotZ);
 
             Droite = false;
-            Debug.Log("Gauche");
             Bon_Sens = true;
             //SpawnPoint.rotation = Quaternion.Euler(0f, 180f, rotZ);
         }
         else
         {
             transform.localScale = new Vector2(1, -1);
-
-            Debug.Log("Mauvais_cote");
             Bon_Sens = false;
         }
 

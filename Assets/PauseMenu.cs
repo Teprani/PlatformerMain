@@ -5,23 +5,28 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPause = false;
     public GameObject pauseMenuUi;
+    public GameObject Player; 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            gameIsPause = true; 
+
             if(gameIsPause)
             {
-                Resume();
+                Paused();
+                Player.SetActive(false);
             }
             else
             {
-                Paused();
+                Resume();
             }
         }
     }
 
-    void Paused()
+    public void Paused()
     {
+        Debug.Log("fg");
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0;
         gameIsPause = true;
@@ -29,13 +34,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("ffreejkgej");
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
         gameIsPause = false;
     }
 
-    /*public void LoadMainMenu()
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-    }*/
+        SceneManager.LoadScene("main_menu");
+    }
 }
