@@ -23,7 +23,7 @@ public class player : MonoBehaviour
     private Vector3 respawnPoint;
     public GameObject fallDetector; // detecte la chute du player et se deplace en meme temps
 
-    [SerializeField] TrailRenderer tr;
+   
     [SerializeField] float moveSpeed_horizontal = 1000.0f;
     [SerializeField] bool is_jumping = false;
     [SerializeField] bool grounded = false;

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject Boule;
     public float offset;
     public float offsetSmoothing;
-    private Vector3 playerPosition;
+    private Vector3 BoulePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +18,16 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        BoulePosition = new Vector3(Boule.transform.position.x, Boule.transform.position.y, transform.position.z);
 
-        if(player.transform.localScale.x > 0f)
+        if(Boule.transform.localScale.x > 0f)
         {
-            playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y, playerPosition.z);
+            BoulePosition = new Vector3(BoulePosition.x + offset, BoulePosition.y, BoulePosition.z);
         }
         else
         {
-            playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y, playerPosition.z);
+            BoulePosition = new Vector3(BoulePosition.x - offset, BoulePosition.y, BoulePosition.z);
         }
-        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, BoulePosition, offsetSmoothing * Time.deltaTime);
     }
 }
