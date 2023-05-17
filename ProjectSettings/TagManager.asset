@@ -7,14 +7,15 @@ TagManager:
   - Ennemy
   - checkpoint
   - FallDetector
+  - hitboxDMG
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Balle
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

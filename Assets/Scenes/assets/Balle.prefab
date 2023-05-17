@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7675801523813589860}
   - component: {fileID: 8243596879345519874}
   - component: {fileID: 3877041459848726004}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Balle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   lifeTime: 1
   balle: {fileID: 5624250195775735448}
   Gun: {fileID: 5300505284488543415, guid: c180109e280e1b24a8feb6da7df12491, type: 3}
+  go: 0
 --- !u!61 &3877041459848726004
 BoxCollider2D:
   m_ObjectHideFlags: 0

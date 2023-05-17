@@ -50,10 +50,6 @@ public class Balle : MonoBehaviour
             DestroyProjectile();
             Debug.Log("beh");
         }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }
         else DestroyProjectile();
     }
 }

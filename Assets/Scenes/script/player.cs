@@ -29,6 +29,7 @@ public class player : MonoBehaviour
     [SerializeField] bool grounded = false;
     [SerializeField] bool is_crouching = false;
     [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;
+    CapsuleCollider2D CapsulPlayer;
 
     private bool isPaused = false;
 
@@ -125,13 +126,19 @@ public class player : MonoBehaviour
     {
         CountJump = 2;
         grounded = true ;
-        
+        CapsulPlayer.sharedMaterial.friction = 5;
+        CapsulPlayer.enabled = false;
+        CapsulPlayer.enabled = true;
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         grounded = false ;
-        
+        CapsulPlayer.sharedMaterial.friction = 0;
+        CapsulPlayer.enabled = false;
+        CapsulPlayer.enabled = true;
+
     }
 
     public void SetPause(bool pause)
