@@ -6,8 +6,9 @@ public class Bloc : MonoBehaviour
 {
     [SerializeField] private float lifeTime=5;
     private GameObject Enemy;
+    private GameObject Gun;
 
-    
+
     //[SerializeField] private GameObject Gun;
 
 
@@ -16,6 +17,7 @@ public class Bloc : MonoBehaviour
     {
         Invoke("DestroyProjectile", lifeTime); //detruit le bloc après  seconde lifetime
         Enemy = GameObject.FindGameObjectWithTag("Ennemy");
+        Gun = GameObject.FindGameObjectWithTag("Arme");
         Enemy.GetComponent<IA_Enemy>().Target = gameObject.transform;
     }
 

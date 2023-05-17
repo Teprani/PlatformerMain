@@ -136,11 +136,13 @@ public class Prejectil : MonoBehaviour
 
 
         }
-        void nbrBloc()
-        {
-            NombreBloc--;
 
-        }
+        
+
+    }
+    public void nbrBloc()
+    {
+        NombreBloc--;
 
     }
 }

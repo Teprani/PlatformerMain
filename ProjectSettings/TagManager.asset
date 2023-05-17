@@ -8,6 +8,7 @@ TagManager:
   - checkpoint
   - FallDetector
   - hitboxDMG
+  - Arme
   layers:
   - Default
   - TransparentFX
