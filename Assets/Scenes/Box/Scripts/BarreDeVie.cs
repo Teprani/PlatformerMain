@@ -18,4 +18,5 @@ public class BarreDeVie : MonoBehaviour
         // indique le nombre de points de vie a afficher
         slider.value = health;
     }
+
 }

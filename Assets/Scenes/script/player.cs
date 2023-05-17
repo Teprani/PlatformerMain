@@ -126,18 +126,20 @@ public class player : MonoBehaviour
     {
         CountJump = 2;
         grounded = true ;
-        CapsulPlayer.sharedMaterial.friction = 5;
+        /*CapsulPlayer.sharedMaterial.friction = 5;
         CapsulPlayer.enabled = false;
         CapsulPlayer.enabled = true;
+
+        Debug.Log("tu pue");*/
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         grounded = false ;
-        CapsulPlayer.sharedMaterial.friction = 0;
+        /*CapsulPlayer.sharedMaterial.friction = 0;
         CapsulPlayer.enabled = false;
-        CapsulPlayer.enabled = true;
+        CapsulPlayer.enabled = true;*/
 
     }
 

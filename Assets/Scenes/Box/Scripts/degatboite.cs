@@ -27,6 +27,7 @@ public class degatboite : MonoBehaviour
             {
                 playerHealth.TakeDamage(5);
                 timerDamage = 0;
+                Debug.Log("gtgrgtgt");
             }
         }
         
