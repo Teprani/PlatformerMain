@@ -94,16 +94,32 @@ public class player : MonoBehaviour
    
     private void OnTriggerStay2D(Collider2D collision)
     {
-         if(collision.tag == "FallDetector")
+        if(collision.tag == "FallDetector")
         {
-            transform.position = respawnPoint;
-
+            StartCoroutine(Respawn());
         }
         else if (collision.tag == "checkpoint")
         {
                 respawnPoint = transform.position;
         }
+    }
+
+    private IEnumerator Respawn()
+    {
+        transform.position = respawnPoint;
+        if (grounded == false)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            
         }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            yield return new WaitForSeconds(1);
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

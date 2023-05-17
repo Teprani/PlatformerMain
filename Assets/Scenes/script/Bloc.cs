@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bloc : MonoBehaviour
 {
     [SerializeField] private float lifeTime=5;
+    private GameObject Enemy;
+
+    
     //[SerializeField] private GameObject Gun;
 
 
@@ -12,6 +15,8 @@ public class Bloc : MonoBehaviour
     void Start()
     {
         Invoke("DestroyProjectile", lifeTime); //detruit le bloc après  seconde lifetime
+        Enemy = GameObject.FindGameObjectWithTag("Ennemy");
+        Enemy.GetComponent<IA_Enemy>().Target = gameObject.transform;
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class Bloc : MonoBehaviour
     
     void DestroyProjectile()
     {
-        
+        Enemy.GetComponent<IA_Enemy>().Target = GameObject.FindGameObjectWithTag("Player").transform;
         //Gun.GetComponent<Prejectil>().NombreBloc--;
         Destroy(gameObject);
 
