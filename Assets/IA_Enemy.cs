@@ -6,7 +6,7 @@ public class IA_Enemy : MonoBehaviour {
  
      public Transform Target;
      [SerializeField]private float Range;
-     public float Speed;
+     [SerializeField] public float Speed;
      private Rigidbody2D rb;
  
  

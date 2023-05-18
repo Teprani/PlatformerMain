@@ -12,7 +12,7 @@ public class player : MonoBehaviour
     float horizontal_value;
     Vector2 ref_velocity = Vector2.zero;
 
-    float jumpForce = 15f; 
+    [SerializeField] float jumpForce = 10f; 
     
     private int LastPressedJumpTime = 0;
     private int LastOnGroundTime = 0;
