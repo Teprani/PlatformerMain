@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994838b43c6f08c4caa9f57ac805d49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 15
-  Dommage: 10
+  BulletSpeed: 30
+  Dommage: 100
   rb: {fileID: 7675801523813589860}
   lifeTime: 1
   balle: {fileID: 5624250195775735448}

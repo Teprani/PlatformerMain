@@ -45,7 +45,7 @@ public class Balle : MonoBehaviour
         if (collision.gameObject.CompareTag("Ennemy"))
         {
             //collision.gameObject.GetComponent<Ennemy>().pv -= Dommage;
-            collision.gameObject.GetComponentInChildren<EnemyHealth>().TakeDamage(10);
+            collision.gameObject.GetComponentInChildren<EnemyHealth>().TakeDamage(Dommage);
             collision.gameObject.GetComponentInChildren<EnemyHealth>().StartCoroutine("ShowBar");
             DestroyProjectile();
             Debug.Log("beh");
