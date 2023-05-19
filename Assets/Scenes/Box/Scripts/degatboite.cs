@@ -41,7 +41,7 @@ public class degatboite : MonoBehaviour
             Vector2 test = collision.transform.position - gameObject.transform.position;
             test.Normalize();
             dot = Vector2.Dot(test, Vector2.up);
-            Debug.Log("beh");
+           
         }
     }
 

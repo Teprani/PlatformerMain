@@ -10,6 +10,7 @@ TagManager:
   - hitboxDMG
   - Arme
   - Boule
+  - Collectibles
   layers:
   - Default
   - TransparentFX

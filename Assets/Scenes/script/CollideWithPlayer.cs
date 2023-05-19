@@ -18,7 +18,7 @@ public class CollideWithPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("coucou");
+       
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponentInChildren<Health>().pv += 10;
