@@ -29,4 +29,11 @@ public class Boule_movement : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
     }
+
+    public void PlayerDeath(int checkpoint)
+    {
+        i = checkpoint;
+        gameObject.transform.position = points[i].position;
+    }
+
 }

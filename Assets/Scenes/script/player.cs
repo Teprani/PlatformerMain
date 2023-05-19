@@ -21,6 +21,7 @@ public class player : MonoBehaviour
     private Vector2 aidepose;
 
     private Vector3 respawnPoint;
+    private int tpcampoint = 0;
     public GameObject fallDetector; // detecte la chute du player et se deplace en meme temps
 
    
@@ -102,12 +103,14 @@ public class player : MonoBehaviour
         else if (collision.tag == "checkpoint")
         {
                 respawnPoint = transform.position;
+            tpcampoint = FindObjectOfType<Test>().getIndex();
         }
     }
 
     private IEnumerator Respawn()
     {
         transform.position = respawnPoint;
+        FindObjectOfType<Boule_movement>().PlayerDeath(tpcampoint);
         if (grounded == false)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
