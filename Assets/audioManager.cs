@@ -3,14 +3,18 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void Music()
     {
-        
+
+            /*AudioSource[] audio = FindObjectsOfType<AudioSource>();
+
+            foreach (AudioSource a in audio)
+            {
+                a.Play();
+            }*/
+        //recuperer audio source get component
+        GetComponent<AudioSource>().enabled = false;
+
     }
 }
