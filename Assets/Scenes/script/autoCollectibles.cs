@@ -10,6 +10,8 @@ public class autoCollectibles : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectibles"))
         {
             Destroy(collision.gameObject);
+            
+            
             collectible++;
             Debug.Log("Collectibles:" + collectible);
         }

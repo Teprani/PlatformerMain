@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Collectibles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2148123520594961195
 Transform:
@@ -114,3 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622e9a5bc93f2eb4fbe27b274ed1b8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camTP: 0
