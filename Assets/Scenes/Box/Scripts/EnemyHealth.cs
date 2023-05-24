@@ -35,16 +35,16 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Player)
     {
-
         if (Player.transform.name == "Player")
         {
-            TakeDamage(25);
+            TakeDamage(100);
+            Debug.Log("BEH!!!");
             StartCoroutine(ShowBar());
-
         }
     }
     private IEnumerator ShowBar()
     {
+        Debug.Log("AH!!");
         HEALTHBAR.SetActive(true);
         yield return new WaitForSeconds(5f);
         HEALTHBAR.SetActive(false);

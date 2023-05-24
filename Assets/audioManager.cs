@@ -7,12 +7,12 @@ public class audioManager : MonoBehaviour
     public void Music()
     {
 
-            /*AudioSource[] audio = FindObjectsOfType<AudioSource>();
+            AudioSource[] audio = FindObjectsOfType<AudioSource>();
 
             foreach (AudioSource a in audio)
             {
                 a.Play();
-            }*/
+            }
         //recuperer audio source get component
         GetComponent<AudioSource>().enabled = false;
 

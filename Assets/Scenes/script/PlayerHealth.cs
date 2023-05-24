@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer graphics;
     public float invincibilityFlashDelay = 0.2f;
 
+    private int tpcampoint = 0;
+
     public BarreDeVie healthBar;
 
     //[SerializeField] GameObject hitboxDMG;
@@ -27,7 +29,12 @@ public class PlayerHealth : MonoBehaviour
         // test pour voir si ca fonctionne
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(20);
+            TakeDamage(100);
+        }
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(gameObject.GetComponent<player>().Respawn());
+            currentHealth = 100;
         }
     }
 
@@ -38,8 +45,8 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= damage;  // si on prends des degats ont retire de la vie a la vie actuelle
             healthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
             isInvincible = true;
-            StartCoroutine(InvincibilityFlash());
-            StartCoroutine(HandleInvincibilityDelay());
+            //StartCoroutine(InvincibilityFlash());
+            //StartCoroutine(HandleInvincibilityDelay());
         }
     }
     public void Heal(int healAmount)
@@ -55,28 +62,29 @@ public class PlayerHealth : MonoBehaviour
                 healthBar.SetHealth(currentHealth);
             }
         }
+        
 
     }
 
-    public IEnumerator InvincibilityFlash()
-    {
-        while (isInvincible)
-        {
-            //hitboxDMG.SetActive(false);
-            graphics.color = new Color(1f, 1f, 1f, 0f);
-            yield return new WaitForSeconds(invincibilityFlashDelay);
-            graphics.color = new Color(1f, 1f, 1f, 1f);
-            yield return new WaitForSeconds(invincibilityFlashDelay);
+    //public IEnumerator InvincibilityFlash()
+    //{
+    //    while (isInvincible)
+    //    {
+    //        //hitboxDMG.SetActive(false);
+    //        graphics.color = new Color(1f, 1f, 1f, 0f);
+    //        yield return new WaitForSeconds(invincibilityFlashDelay);
+    //        graphics.color = new Color(1f, 1f, 1f, 1f);
+    //        yield return new WaitForSeconds(invincibilityFlashDelay);
 
-            //hitboxDMG.SetActive(true);
-        }
-        Debug.Log("Coroutine1");
-    }
+    //        //hitboxDMG.SetActive(true);
+    //    }
+    //    Debug.Log("Coroutine1");
+    //}
 
-    public IEnumerator HandleInvincibilityDelay()
-    {
-        yield return new WaitForSeconds(1.5f);
-        isInvincible = false;
-        Debug.Log("Coroutine2");
-    }
+    //public IEnumerator HandleInvincibilityDelay()
+    //{
+    //    yield return new WaitForSeconds(1.5f);
+    //    isInvincible = false;
+    //    Debug.Log("Coroutine2");
+    //}
 }

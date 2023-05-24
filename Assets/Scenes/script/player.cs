@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-
+    [SerializeField]AudioSource As;
     CapsuleCollider2D cap;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -99,16 +99,19 @@ public class player : MonoBehaviour
         if(collision.tag == "FallDetector")
         {
             StartCoroutine(Respawn());
+
         }
-        else if (collision.tag == "checkpoint")
+        /*else if (collision.tag == "checkpoint")
         {
                 respawnPoint = transform.position;
             tpcampoint = FindObjectOfType<Test>().getIndex();
-        }
+        }*/
+        
     }
 
-    private IEnumerator Respawn()
+    public IEnumerator Respawn()
     {
+        As.enabled = false;
         transform.position = respawnPoint;
         FindObjectOfType<Boule_movement>().PlayerDeath(tpcampoint);
         if (grounded == false)
@@ -118,10 +121,11 @@ public class player : MonoBehaviour
         }
         else
         {
+           
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             yield return new WaitForSeconds(1);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
+            As.enabled = true;
         }
     }
 
