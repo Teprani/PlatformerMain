@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,8 +34,10 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            StartCoroutine(gameObject.GetComponent<player>().Respawn());
-            currentHealth = 100;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //StartCoroutine(gameObject.GetComponent<player>().Respawn());
+            //currentHealth = 100;
+
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -98,14 +99,16 @@ public class player : MonoBehaviour
     {
         if(collision.tag == "FallDetector")
         {
-            StartCoroutine(Respawn());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //StartCoroutine(Respawn());
 
         }
-        /*else if (collision.tag == "checkpoint")
+        else if (collision.tag == "checkpoint")
         {
-                respawnPoint = transform.position;
+            respawnPoint = transform.position;
             tpcampoint = FindObjectOfType<Test>().getIndex();
-        }*/
+            Debug.Log("ffff");
+        }
         
     }
 
@@ -137,7 +140,7 @@ public class player : MonoBehaviour
         CapsulPlayer.enabled = false;
         CapsulPlayer.enabled = true;
 
-        Debug.Log("tu pue");*/
+        */
 
     }
 
