@@ -15589,7 +15589,7 @@ Transform:
   m_GameObject: {fileID: 1771247718}
   m_LocalRotation: {x: -0, y: -0, z: -0.7067919, w: 0.70742154}
   m_LocalPosition: {x: -49.19, y: 13.53, z: 6.9459724}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 1.8376, y: 0.76243, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -17166,7 +17166,6 @@ GameObject:
   - component: {fileID: 5225157186162483535}
   - component: {fileID: 5225157186162483537}
   - component: {fileID: 5225157186162483536}
-  - component: {fileID: 5225157186162483538}
   - component: {fileID: 5225157186162483539}
   - component: {fileID: 5225157186162483540}
   - component: {fileID: 5225157186162483541}
@@ -17220,6 +17219,7 @@ MonoBehaviour:
   As: {fileID: 1662809034}
   jumpForce: 14
   fallDetector: {fileID: 647537506}
+  animator: {fileID: 5225157186162483543}
   moveSpeed_horizontal: 500
   is_jumping: 0
   grounded: 0
@@ -17239,19 +17239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5540cce057cd49e4eb90c64792e7c073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5225157186162483538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225157186162483381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad53d6fbf706a441be13d552a334c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pv: 100
 --- !u!114 &5225157186162483539
 MonoBehaviour:
   m_ObjectHideFlags: 0

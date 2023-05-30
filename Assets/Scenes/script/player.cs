@@ -24,6 +24,8 @@ public class player : MonoBehaviour
     private Vector3 respawnPoint;
     private int tpcampoint = 0;
     public GameObject fallDetector; // detecte la chute du player et se deplace en meme temps
+    public Animator animator;
+
 
    
     [SerializeField] float moveSpeed_horizontal = 1000.0f;
@@ -92,6 +94,7 @@ public class player : MonoBehaviour
     {
         Vector2 target_velocity = new Vector2(horizontal_value * moveSpeed_horizontal * Time.deltaTime, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, target_velocity, ref ref_velocity, 0.05f);
+        //animator.SetFloat("Speed", )
 
     }
    
