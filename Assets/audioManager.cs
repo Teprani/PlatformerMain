@@ -4,6 +4,20 @@ public class audioManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    /*public static audioManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
+    }*/
     public void Music()
     {
 
@@ -17,4 +31,5 @@ public class audioManager : MonoBehaviour
         GetComponent<AudioSource>().enabled = false;
 
     }
+    
 }

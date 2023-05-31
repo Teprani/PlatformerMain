@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     SpriteRenderer sr;
     //Animator animController;
     float horizontal_value;
+    [SerializeField]  float vertical_value;
     Vector2 ref_velocity = Vector2.zero;
 
     [SerializeField] float jumpForce = 10f; 
@@ -46,7 +47,7 @@ public class player : MonoBehaviour
     {
         cap = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         rb.gravityScale = 4f;
 
         respawnPoint = transform.position;
@@ -56,8 +57,14 @@ public class player : MonoBehaviour
     void Update()
     {
 
+        animator.SetFloat("Speed",Mathf.Abs(horizontal_value));
+        
         horizontal_value = Input.GetAxis("Horizontal");
 
+
+            
+
+        
         if (horizontal_value > 0) sr.flipX = false;
         else if (horizontal_value < 0) sr.flipX = true;
 
@@ -71,8 +78,9 @@ public class player : MonoBehaviour
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
- void Jump()
+    void Jump()
     {
+        animator.SetBool("Jump", true);
         // Garantit que nous ne pouvons pas appeler Jump plusieurs fois  partir d'une seule pression
         LastPressedJumpTime = 0;
         LastOnGroundTime = 0;
@@ -110,7 +118,6 @@ public class player : MonoBehaviour
         {
             respawnPoint = transform.position;
             tpcampoint = FindObjectOfType<Test>().getIndex();
-            Debug.Log("ffff");
         }
         
     }
@@ -139,6 +146,7 @@ public class player : MonoBehaviour
     {
         CountJump = 2;
         grounded = true ;
+        animator.SetBool("Jump", false);
         /*CapsulPlayer.sharedMaterial.friction = 5;
         CapsulPlayer.enabled = false;
         CapsulPlayer.enabled = true;
@@ -149,7 +157,7 @@ public class player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        grounded = false ;
+        grounded = false;
         /*CapsulPlayer.sharedMaterial.friction = 0;
         CapsulPlayer.enabled = false;
         CapsulPlayer.enabled = true;*/
@@ -160,6 +168,5 @@ public class player : MonoBehaviour
     {
         isPaused = pause;
     }
-
 
 }
