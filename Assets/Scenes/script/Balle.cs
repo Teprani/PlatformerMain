@@ -48,7 +48,7 @@ public class Balle : MonoBehaviour
             collision.gameObject.GetComponentInChildren<EnemyHealth>().TakeDamage(Dommage);
             collision.gameObject.GetComponentInChildren<EnemyHealth>().StartCoroutine("ShowBar");
             DestroyProjectile();
-            Debug.Log("beh");
+            
         }
         else DestroyProjectile();
     }

@@ -38,13 +38,13 @@ public class EnemyHealth : MonoBehaviour
         if (Player.transform.name == "Player")
         {
             TakeDamage(100);
-            Debug.Log("BEH!!!");
+            
             StartCoroutine(ShowBar());
         }
     }
     private IEnumerator ShowBar()
     {
-        Debug.Log("AH!!");
+        
         HEALTHBAR.SetActive(true);
         yield return new WaitForSeconds(5f);
         HEALTHBAR.SetActive(false);

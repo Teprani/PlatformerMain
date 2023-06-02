@@ -37,14 +37,14 @@ public class EnemyHealth1 : MonoBehaviour
     {
         if(Player.transform.name == "Player")
         {
-            TakeDamage(100);
-            Debug.Log("BEH!!!");
+            TakeDamage(5);
+            
             StartCoroutine(ShowBar());
         }
     }
     private IEnumerator ShowBar()
     {
-        Debug.Log("AH!!");
+        
         HEALTHBAR.SetActive(true);
         yield return new WaitForSeconds(5f);
         HEALTHBAR.SetActive(false);

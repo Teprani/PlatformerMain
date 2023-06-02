@@ -32,7 +32,7 @@ public class player : MonoBehaviour
     [SerializeField] float moveSpeed_horizontal = 1000.0f;
     [SerializeField] bool is_jumping = false;
     [SerializeField] bool grounded = false;
-    [SerializeField] bool is_crouching = false;
+    
     [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;
     CapsuleCollider2D CapsulPlayer;
 
