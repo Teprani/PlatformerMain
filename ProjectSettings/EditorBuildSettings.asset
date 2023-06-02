@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/boss_level.unity
     guid: df0490c9c1dd9b14eb1353e91347179b
   - enabled: 1
-    path: Assets/Scenes/GameOver_Menu.unity
-    guid: 516355c4ed6ad1241945795032d9d4fd
+    path: Assets/Scenes/credits 1.unity
+    guid: f438116d233e0ea40b4ce5c50ec29a17
   m_configObjects: {}

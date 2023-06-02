@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Destroy", 3f);
+        Invoke("Destroy", 5f);
     }
     // Start is called before the first frame update
     void Start()
