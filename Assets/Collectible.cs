@@ -21,7 +21,7 @@ public class Collectible : MonoBehaviour
     {
         if (playerRef)
         {
-            playerRef.GetComponent<autoCollectibles>().collectible++;
+            playerRef.GetComponent<score_collectt>().CollectCollectible();
             //playerRef.GetComponentInChildren<Health>().pv += 10;
             Destroy(gameObject);
         }

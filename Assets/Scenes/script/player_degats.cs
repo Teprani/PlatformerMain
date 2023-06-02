@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class degatboite : MonoBehaviour
+public class player_degats : MonoBehaviour
 {
 
     bool playerCollide = false;
@@ -14,7 +14,7 @@ public class degatboite : MonoBehaviour
     void Start()
     {
         timerDamage = timeBetweenDamage;
-        
+
     }
 
     // Update is called once per frame
@@ -23,14 +23,14 @@ public class degatboite : MonoBehaviour
         if (playerCollide && dot < 0.5f)
         {
             timerDamage += Time.deltaTime;
-            if(timerDamage >= timeBetweenDamage)
+            if (timerDamage >= timeBetweenDamage)
             {
-                playerHealth.TakeDamage(100);
+                playerHealth.TakeDamage(10);
                 timerDamage = 0;
-                
+
             }
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,7 +41,7 @@ public class degatboite : MonoBehaviour
             Vector2 test = collision.transform.position - gameObject.transform.position;
             test.Normalize();
             dot = Vector2.Dot(test, Vector2.up);
-           
+
         }
     }
 

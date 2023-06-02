@@ -37,7 +37,7 @@ public class EnemyHealth1 : MonoBehaviour
     {
         if(Player.transform.name == "Player")
         {
-            TakeDamage(5);
+            TakeDamage(1);
             
             StartCoroutine(ShowBar());
         }
